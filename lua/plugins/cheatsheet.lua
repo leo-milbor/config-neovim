@@ -10,21 +10,21 @@ return {
     config = function()
       local wk = require("which-key")
       wk.add({
-        { "<leader>",   group = "extended functionality" },
-        { "<leader>w",  group = "windows",               proxy = "<c-w>" }, -- proxy to window mappings
-        { "<leader>b",  group = "buffer navigation" },
-        { "<leader>d",  group = "debugging" },
-        { "<leader>f",  group = "find" },
-        { "<leader>g",  group = "go to" },
-        { "<leader>l",  group = "LSP actions" },
-        { "<leader>ld", desc = "diagnostic" },
-        { "<leader>n",  group = "note taking" },
-        { "<leader>r",  group = "refactoring" },
-        { "<leader>rE", group = "extract to file" },
-        { "<leader>re", group = "extract" },
-        { "<leader>ri", group = "inline" },
-        { "<leader>t",  group = "testing" },
-        { "<leader>e",  group = "execute code" },
+        { "<leader>",   group = "Extended functionality" },
+        { "<leader>w",  group = "Windows",               proxy = "<c-w>" }, -- proxy to window mappings
+        { "<leader>b",  group = "Buffer" },
+        { "<leader>s",  group = "Search & replace" },
+        { "<leader>c",  group = "Code" },
+        { "<leader>d",  group = "Debugging" },
+        { "<leader>f",  group = "Find" },
+        { "<leader>g",  group = "Go to" },
+        { "<leader>n",  group = "Note taking" },
+        { "<leader>r",  group = "Refactoring" },
+        { "<leader>rE", group = "Extract (file)" },
+        { "<leader>re", group = "Extract" },
+        { "<leader>ri", group = "Inline" },
+        { "<leader>t",  group = "Testing" },
+        { "<leader>e",  group = "Execute code" },
       })
     end,
   },
