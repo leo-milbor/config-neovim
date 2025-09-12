@@ -14,10 +14,10 @@ return {
         { "<leader>w",  group = "Windows",               proxy = "<c-w>" }, -- proxy to window mappings
         { "<leader>b",  group = "Buffer" },
         { "<leader>s",  group = "Search & replace" },
-        { "<leader>c",  group = "Code" },
+        { "<leader>i",  group = "Show information" },
         { "<leader>d",  group = "Debugging" },
         { "<leader>f",  group = "Find" },
-        { "<leader>g",  group = "Go to" },
+        { "<leader>g",  group = "Go to or LSP action" },
         { "<leader>n",  group = "Note taking" },
         { "<leader>r",  group = "Refactoring" },
         { "<leader>rE", group = "Extract (file)" },
