@@ -50,6 +50,3 @@ vim.opt.colorcolumn = "80"
 -- Sets how neovim will display certain whitespace characters in the editor.
 -- vim.opt.list = true
 -- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-
--- format on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]

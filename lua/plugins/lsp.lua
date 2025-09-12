@@ -28,6 +28,12 @@ return {
           vim.lsp.config("*", {
             capabilities = vim.lsp.protocol.make_client_capabilities()
           })
+
+
+          vim.keymap.set("n", "grf", vim.lsp.buf.format, { desc = "Format" })
+
+          -- format on save
+          vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
         end,
       },
     },
