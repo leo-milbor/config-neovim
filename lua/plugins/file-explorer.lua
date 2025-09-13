@@ -3,7 +3,9 @@ return {
     'stevearc/oil.nvim',
     ---@module 'oil'
     ---@type oil.SetupOpts
-    opts = {},
+    opts = {
+      skip_confirm_for_simple_edits = true,
+    },
     -- Optional dependencies
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
@@ -16,11 +18,13 @@ return {
     end,
   },
   {
+    -- diagnostics signs
     "JezerM/oil-lsp-diagnostics.nvim",
     dependencies = { "stevearc/oil.nvim" },
     opts = {}
   },
   {
+    -- git signs
     "benomahony/oil-git.nvim",
     dependencies = { "stevearc/oil.nvim" },
     -- No opts or config needed! Works automatically
