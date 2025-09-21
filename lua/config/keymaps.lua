@@ -1,11 +1,11 @@
 -- This has to be done before any mapping
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 local set_key = vim.keymap.set
 
 -- Clear highlights on search when pressing <Esc> in normal mode
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- more sensible go top or bottom of file
 set_key({ "n", "v" }, "gj", "G", { desc = "go to the bottom of the file" })
