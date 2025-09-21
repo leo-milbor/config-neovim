@@ -1,5 +1,28 @@
 return {
 	{
+		"github/copilot.vim",
+		config = function()
+			-- Disable tab mapping (avoid conflicts with completion/snippets/fzf-lua)
+			vim.g.copilot_no_tab_map = true
+
+			vim.keymap.set("i", "<C-A>", 'copilot#Accept("<CR>")', {
+				expr = true,
+				replace_keycodes = false,
+				desc = "Copilot accept suggestion",
+			})
+
+			-- Cycle through suggestions
+			vim.keymap.set("i", "<M-]>", "<Plug>(copilot-next)", { desc = "Next Copilot suggestion" })
+			vim.keymap.set("i", "<M-[>", "<Plug>(copilot-previous)", { desc = "Previous Copilot suggestion" })
+
+			-- Dismiss current suggestion
+			vim.keymap.set("i", "<C-\\>", "<Plug>(copilot-dismiss)", { desc = "Dismiss Copilot suggestion" })
+
+			-- Optional: highlight Copilot ghost text differently
+			vim.cmd("highlight CopilotSuggestion guifg=#555555 ctermfg=8")
+		end,
+	},
+	{
 		"jackMort/ChatGPT.nvim",
 		event = "VeryLazy",
 		dependencies = {
