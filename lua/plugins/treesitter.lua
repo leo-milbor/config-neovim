@@ -4,44 +4,24 @@ return {
 		lazy = false,
 		branch = "main",
 		build = ":TSUpdate",
+		event = { "BufNewFile", "BufReadPre" },
 		config = function()
 			require("nvim-treesitter.config").setup({
-				ensure_installed = {
-					"awk",
-					"bash",
-					"css",
-					"csv",
-					"dockerfile",
-					"eex",
-					"elixir",
-					"fsharp",
-					"go",
-					"gomod",
-					"gowork",
-					"heex",
-					"html",
-					"ini",
-					"java",
-					"json",
-					"latex",
-					"lua",
-					"markdown",
-					"markdown_inline",
-					"mermaid",
-					"proto",
-					"python",
-					"regex",
-					"rust",
-					"sql",
-					"sxhkdrc",
-					"toml",
-					"typescript",
-					"xml",
-					"yaml",
+				ensure_installed = "all",
+				highlight = {
+					enable = true,
 				},
-				auto_install = true,
-				highlight = { enable = true },
-				indent = { enable = true },
+				indent = {
+					enable = true,
+				},
+			})
+
+			-- Ensure treesitter is loaded when entering buffer.
+			vim.keymap.set("n", "<leader>th", vim.treesitter.start, { desc = "start treesitter" })
+			vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+				callback = function(args)
+					vim.treesitter.start(args.buf)
+				end,
 			})
 		end,
 	},
