@@ -1,21 +1,3 @@
-local servers = {
-	"lua_ls", -- lua
-	"bashls", -- bash
-	"gopls", -- go
-	"clojure_lsp", -- clojure
-	"rust_analyzer", -- rust
-	"html", -- html
-	"jsonls", -- json
-	"dockerls", -- dockerfile
-	"pyright", -- python
-	"marksman", -- markdown
-	"taplo", -- toml
-	"yamlls", -- yaml
-	"dockerls", -- dockerfile
-	-- "fsautocomplete", -- F#
-	-- "rnix-lsp",       -- Nix
-}
-
 return {
 	{
 		"mason-org/mason-lspconfig.nvim",
@@ -39,7 +21,30 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				automatic_enable = true,
-				ensure_installed = servers,
+				ensure_installed = {
+					"bashls", -- bash
+					"clojure_lsp", -- clojure
+					"csharpier", -- C# formatter
+					"dart-debug-adapter", -- dart debug
+					"dockerls", -- dockerfile
+					"expert", -- elixir
+					"fsautocomplete", -- F#
+					"gopls", -- go
+					"html", -- html
+					"hyprls", -- hprland
+					"jsonls", -- json
+					"lemminx", -- xml
+					"lua_ls", -- lua
+					"marksman", -- markdown
+					"omnisharp", -- C#
+					"prettierd", -- global formatter
+					"pyright", -- python
+					"rust_analyzer", -- rust
+					"shfmt", -- shell formatter
+					"stylua", -- lua formatter
+					"taplo", -- toml
+					"yamlls", -- yaml
+				},
 			})
 		end,
 	},
