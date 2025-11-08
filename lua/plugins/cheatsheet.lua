@@ -19,6 +19,7 @@ return {
 				{ "<leader>g", group = "Go to or LSP action" },
 				{ "<leader>i", group = "Show information" },
 				{ "<leader>n", group = "Note taking" },
+				{ "<leader>q", group = "Quickfix" },
 				{ "<leader>r", group = "Refactoring" },
 				{ "<leader>re", group = "Extract" },
 				{ "<leader>rE", group = "Extract (file)" },

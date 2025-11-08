@@ -43,3 +43,9 @@ set_key({ "n", "v" }, "<leader>y", [["+y]], { desc = "copy to system clipboard" 
 set_key("n", "Q", "<nop>", { desc = "no ex, who wants that" })
 
 -- set_key("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "enter substitute command for word under cursor" })
+
+-- Quickfix navigation
+vim.keymap.set("n", "<leader>qn", ":cnext<cr>", { desc = "Next quickfix item" })
+vim.keymap.set("n", "<leader>qp", ":cprev<cr>", { desc = "Previous quickfix item" })
+vim.keymap.set("n", "<leader>qo", ":copen<cr>", { desc = "Open quickfix list" })
+vim.keymap.set("n", "<leader>qc", ":cclose<cr>", { desc = "Close quickfix list" })
