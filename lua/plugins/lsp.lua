@@ -24,8 +24,6 @@ return {
 				ensure_installed = {
 					"bashls", -- bash
 					"clojure_lsp", -- clojure
-					"csharpier", -- C# formatter
-					"dart-debug-adapter", -- dart debug
 					"dockerls", -- dockerfile
 					"expert", -- elixir
 					"fsautocomplete", -- F#
@@ -37,10 +35,8 @@ return {
 					"lua_ls", -- lua
 					"marksman", -- markdown
 					"omnisharp", -- C#
-					"prettierd", -- global formatter
 					"pyright", -- python
 					"rust_analyzer", -- rust
-					"shfmt", -- shell formatter
 					"stylua", -- lua formatter
 					"taplo", -- toml
 					"yamlls", -- yaml
