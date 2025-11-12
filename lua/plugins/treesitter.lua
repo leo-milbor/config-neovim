@@ -4,30 +4,31 @@ return {
 		lazy = false,
 		branch = "main",
 		build = ":TSUpdate",
-		event = { "BufNewFile", "BufReadPre" },
 		config = function()
-			require("nvim-treesitter.config").setup({
-				ensure_installed = "all",
-				highlight = {
-					enable = true,
-				},
-				indent = {
-					enable = true,
-				},
-			})
-
-			vim.filetype.add({
-				extension = {
-					axaml = "xml",
-					xaml = "xml",
-				},
-			})
+			require("nvim-treesitter").install("stable")
 
 			-- Ensure treesitter is loaded when entering buffer.
 			vim.keymap.set("n", "<leader>th", vim.treesitter.start, { desc = "start treesitter" })
-			vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
-				callback = function(args)
-					vim.treesitter.start(args.buf)
+			vim.api.nvim_create_autocmd({ "FileType" }, {
+				pattern = {
+					"go",
+					"rs",
+					"lua",
+					"cs",
+					"sh",
+					"ex",
+					"exs",
+					"dart",
+					"xml",
+					"html",
+					"json",
+					"toml",
+					"yaml",
+				},
+				callback = function()
+					vim.treesitter.start()
+					vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+					vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 				end,
 			})
 		end,
