@@ -12,6 +12,8 @@ return {
 			vim.api.nvim_create_autocmd({ "FileType" }, {
 				pattern = {
 					"go",
+					"mod",
+					"sum",
 					"rs",
 					"lua",
 					"cs",
