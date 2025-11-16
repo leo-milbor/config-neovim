@@ -12,6 +12,8 @@ return {
 					})
 
 					vim.keymap.set("n", "grf", vim.lsp.buf.format, { desc = "Format" })
+					vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "definition" })
+					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "declaration" })
 
 					-- format on save
 					vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
