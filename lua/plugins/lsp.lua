@@ -24,22 +24,41 @@ return {
 			require("mason-lspconfig").setup({
 				automatic_enable = true,
 				ensure_installed = {
+					-- lua
+					"lua_ls",
+					"stylua", -- lua formatter
+
+					-- go
+					"gopls",
+					"goimport",
+					"gofumpt",
+
+					-- web
+					"html", -- html
+					"emmet_ls", -- html/jsx
+					"vtsls", -- typescript/react
+					"tailwindcss", -- css
+					"prettierd", -- js formatter
+
+					-- shell
 					"bashls", -- bash
+
+					-- note
+					"marksman", -- markdown
+
+					-- code
 					"clojure_lsp", -- clojure
-					"dockerls", -- dockerfile
 					"expert", -- elixir
 					"fsautocomplete", -- F#
-					"gopls", -- go
-					"html", -- html
-					"hyprls", -- hprland
-					"jsonls", -- json
-					"lemminx", -- xml
-					"lua_ls", -- lua
-					"marksman", -- markdown
 					"omnisharp", -- C#
 					"pyright", -- python
 					"rust_analyzer", -- rust
-					"stylua", -- lua formatter
+
+					-- data/conf
+					"dockerls", -- dockerfile
+					"hyprls", -- hprland
+					"lemminx", -- xml
+					"jsonls", -- json
 					"taplo", -- toml
 					"yamlls", -- yaml
 				},

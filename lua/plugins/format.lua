@@ -2,19 +2,35 @@ return {
 	"stevearc/conform.nvim",
 	opts = {
 		formatters_by_ft = {
+			--lua
 			lua = { "stylua" },
-			python = { "black" },
+
+			-- go
+			go = { "goimports", "gofumpt" },
+
+			-- web
 			javascript = { "prettierd" },
 			typescript = { "prettierd" },
-			json = { "prettierd" },
+			javascriptreact = { "prettierd" },
+			typescriptreact = { "prettierd" },
 			html = { "prettierd" },
 			css = { "prettierd" },
 			scss = { "prettierd" },
+
+			-- code
+			python = { "black" },
+			csharp = { "csharpier" },
+
+			--shell
+			sh = { "shfmt" },
+
+			--note
 			markdown = { "prettierd" },
+
+			-- data/config
 			yaml = { "prettierd" },
 			toml = { "taplo" },
-			sh = { "shfmt" },
-			csharp = { "csharpier" },
+			json = { "prettierd" },
 		},
 	},
 	config = function(_, opts)
