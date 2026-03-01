@@ -30,8 +30,6 @@ return {
 
 					-- go
 					"gopls",
-					"goimport",
-					"gofumpt",
 
 					-- web
 					"html", -- html
