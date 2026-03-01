@@ -17,6 +17,14 @@
       "}"
     ]
   },
+  "Return nil": {
+    "description": "return nil",
+    "scope": "go",
+    "prefix": "rnil",
+    "body": [
+      "return nil"
+    ]
+  },
   "Test cases": {
     "description": "Insert template for test cases with map",
     "scope": "go",
