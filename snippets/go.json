@@ -1,4 +1,22 @@
 {
+  "Test on err": {
+    "description": "Insert template for if err != nil",
+    "scope": "go",
+    "prefix": "iferr",
+    "body": [
+      "if err != nil {", "	return fmt.Errorf(\"$0: %v\", err)",
+      "}"
+    ]
+  },
+  "Test on err join errors": {
+    "description": "Insert template for if err != nil and return joined errors",
+    "scope": "go",
+    "prefix": "iferrj",
+    "body": [
+      "if err != nil {", "	return errors.Join(err, $0)",
+      "}"
+    ]
+  },
   "Test cases": {
     "description": "Insert template for test cases with map",
     "scope": "go",
