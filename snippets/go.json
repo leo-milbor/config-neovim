@@ -1,5 +1,5 @@
 {
-  "Test on err": {
+  "if err": {
     "description": "Insert template for if err != nil",
     "scope": "go",
     "prefix": "iferr",
@@ -8,7 +8,7 @@
       "}"
     ]
   },
-  "Test on err join errors": {
+  "if err join errors": {
     "description": "Insert template for if err != nil and return joined errors",
     "scope": "go",
     "prefix": "iferrj",
@@ -17,7 +17,7 @@
       "}"
     ]
   },
-  "Return nil": {
+  "return nil": {
     "description": "return nil",
     "scope": "go",
     "prefix": "rnil",
@@ -25,10 +25,20 @@
       "return nil"
     ]
   },
-  "Test cases": {
+  "Test": {
+    "description": "Insert tempate for a test",
+    "scope": "go",
+    "prefix": "test",
+    "body": [
+      "func Test_$1_$2(t *testing.T) {",
+      "	$0",
+      "}"
+    ]
+  }
+  "Test table": {
     "description": "Insert template for test cases with map",
     "scope": "go",
-    "prefix": "tc",
+    "prefix": "tt",
     "body": [
       "for name, tc := range map[string]struct {",
       "	$1",
