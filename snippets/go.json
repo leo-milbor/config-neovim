@@ -30,11 +30,10 @@
     "scope": "go",
     "prefix": "test",
     "body": [
-      "func Test_$1_$2(t *testing.T) {",
-      "	$0",
+      "func Test_$1_$2(t *testing.T) {", "	$0",
       "}"
     ]
-  }
+  },
   "Test table": {
     "description": "Insert template for test cases with map",
     "scope": "go",
@@ -50,6 +49,15 @@
       "	t.Run(name, func(t *testing.T) {",
       "		$0",
       "	})",
+      "}"
+    ]
+  },
+  "Test Errorf": {
+    "description": "Insert template for if err != nil { t.Errorf }",
+    "scope": "go",
+    "prefix": "terrf",
+    "body": [
+      "if err != nil {", "	t.Errorf(\"$0: %v\", err)",
       "}"
     ]
   }
