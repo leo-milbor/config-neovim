@@ -6,7 +6,7 @@
     "body": [
       "logger.Info(\"$0\")"
     ]
-  }
+  },
   "if err": {
     "description": "Insert template for if err != nil",
     "scope": "go",
