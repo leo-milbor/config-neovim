@@ -1,4 +1,12 @@
 {
+  "log info": {
+    "description": "Insert template for logger.Info",
+    "scope": "go",
+    "prefix": "logi",
+    "body": [
+      "logger.Info(\"$0\")"
+    ]
+  }
   "if err": {
     "description": "Insert template for if err != nil",
     "scope": "go",
@@ -30,7 +38,7 @@
     "scope": "go",
     "prefix": "test",
     "body": [
-      "func Test_$1_$2(t *testing.T) {", "	$0",
+      "func Test$1_$2(t *testing.T) {", "	$0",
       "}"
     ]
   },
