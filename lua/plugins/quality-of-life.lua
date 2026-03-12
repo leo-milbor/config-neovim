@@ -26,4 +26,11 @@ return {
 			require("mini.indentscope").setup()
 		end,
 	},
+	-- highlight word under cursor
+	{
+		"nvim-mini/mini.cursorword",
+		config = function()
+			require("mini.cursorword").setup()
+		end,
+	},
 }
