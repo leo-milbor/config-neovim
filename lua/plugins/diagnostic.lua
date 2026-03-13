@@ -14,8 +14,8 @@ return {
 			},
 		},
 		keys = {
-			{ "<leader>ix", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics everywhere" },
-			{ "<leader>iX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Diagnostics" },
+			{ "<leader>iX", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics everywhere" },
+			{ "<leader>ix", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Diagnostics" },
 			{ "<leader>is", "<cmd>Trouble symbols toggle<cr>", desc = "Symbols" },
 			{
 				"<leader>iS",
