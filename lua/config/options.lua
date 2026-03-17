@@ -34,6 +34,14 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
+-- Persistent undo
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath("state") .. "/undo"
+
+-- Disable swapfile and backup (optional preference)
+vim.opt.swapfile = false
+vim.opt.backup = false
+
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"

@@ -34,8 +34,8 @@ return {
 		},
 	},
 	config = function(_, opts)
-		require("conform").setup(opts)
-		require("conform").setup({
+		-- Merge user opts with format_on_save configuration and setup conform once
+		local merged_opts = vim.tbl_deep_extend("force", opts or {}, {
 			format_on_save = function(bufnr)
 				-- Disable with a global or buffer-local variable
 				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
@@ -44,6 +44,8 @@ return {
 				return { timeout_ms = 500, lsp_format = "fallback" }
 			end,
 		})
+
+		require("conform").setup(merged_opts)
 
 		vim.api.nvim_create_user_command("FormatDisable", function(args)
 			if args.bang then
