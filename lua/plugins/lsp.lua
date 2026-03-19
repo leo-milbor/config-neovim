@@ -33,7 +33,6 @@ return {
 					"emmet_ls", -- html/jsx
 					"vtsls", -- typescript/react
 					"tailwindcss", -- css
-					"prettierd", -- js formatter
 
 					-- shell
 					"bashls", -- bash
