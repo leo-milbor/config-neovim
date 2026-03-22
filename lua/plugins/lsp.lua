@@ -43,8 +43,6 @@ return {
 					-- code
 					"clojure_lsp", -- clojure
 					"expert", -- elixir
-					"fsautocomplete", -- F#
-					"omnisharp", -- C#
 					"pyright", -- python
 					"rust_analyzer", -- rust
 
