@@ -22,7 +22,7 @@ return {
 			csharp = { "csharpier" },
 
 			--shell
-			sh = { "shfmt" },
+			sh = { "beautysh" },
 
 			--note
 			markdown = { "prettierd" },
@@ -46,6 +46,8 @@ return {
 		})
 
 		require("conform").setup(merged_opts)
+
+		vim.keymap.set("n", "grf", require("conform").format, { desc = "Format" })
 
 		vim.api.nvim_create_user_command("FormatDisable", function(args)
 			if args.bang then
