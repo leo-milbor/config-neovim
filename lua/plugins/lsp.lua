@@ -6,14 +6,29 @@ return {
 			{ "mason-org/mason.nvim", opts = {} },
 			{
 				"neovim/nvim-lspconfig",
+				dependencies = { "ibhagwan/fzf-lua" },
 				config = function()
+					local fzf = require("fzf-lua")
 					vim.lsp.config("*", {
 						capabilities = vim.lsp.protocol.make_client_capabilities(),
 					})
 
-					vim.keymap.set("n", "grf", vim.lsp.buf.format, { desc = "Format" })
-					vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "definition" })
-					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "declaration" })
+					vim.keymap.set("n", "gd", fzf.lsp_definitions, { desc = "definition" })
+					vim.keymap.set("n", "gD", fzf.lsp_declarations, { desc = "declaration" })
+					vim.keymap.set({ "n", "v" }, "grr", fzf.lsp_references, { desc = "references", noremap = true })
+					vim.keymap.set(
+						{ "n", "v" },
+						"gri",
+						fzf.lsp_implementations,
+						{ desc = "code action", noremap = true }
+					)
+					vim.keymap.set({ "n", "v" }, "grc", fzf.lsp_code_actions, { desc = "code action", noremap = true })
+					vim.keymap.set(
+						{ "n", "v" },
+						"gra",
+						fzf.lsp_finder,
+						{ desc = "fuzzy find lsp location", noremap = true }
+					)
 				end,
 			},
 		},

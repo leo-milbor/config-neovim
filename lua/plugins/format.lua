@@ -47,7 +47,9 @@ return {
 
 		require("conform").setup(merged_opts)
 
-		vim.keymap.set("n", "grf", require("conform").format, { desc = "Format" })
+		vim.keymap.set("n", "grf", function()
+			require("conform").format({ lsp_format = "fallback" })
+		end, { desc = "Format" })
 
 		vim.api.nvim_create_user_command("FormatDisable", function(args)
 			if args.bang then
