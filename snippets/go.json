@@ -3,44 +3,31 @@
     "description": "Insert template for logger.Info",
     "scope": "go",
     "prefix": "logi",
-    "body": [
-      "logger.Info(\"$0\")"
-    ]
+    "body": ["logger.Info(\"$0\")"]
   },
   "if err": {
     "description": "Insert template for if err != nil",
     "scope": "go",
     "prefix": "iferr",
-    "body": [
-      "if err != nil {", "	return fmt.Errorf(\"$0: %v\", err)",
-      "}"
-    ]
+    "body": ["if err != nil {", "	return fmt.Errorf(\"$0: %w\", err)", "}"]
   },
   "if err join errors": {
     "description": "Insert template for if err != nil and return joined errors",
     "scope": "go",
     "prefix": "iferrj",
-    "body": [
-      "if err != nil {", "	return errors.Join(err, $0)",
-      "}"
-    ]
+    "body": ["if err != nil {", "	return errors.Join(err, $0)", "}"]
   },
   "return nil": {
     "description": "return nil",
     "scope": "go",
     "prefix": "rnil",
-    "body": [
-      "return nil"
-    ]
+    "body": ["return nil"]
   },
   "Test": {
     "description": "Insert tempate for a test",
     "scope": "go",
     "prefix": "test",
-    "body": [
-      "func Test$1_$2(t *testing.T) {", "	$0",
-      "}"
-    ]
+    "body": ["func Test$1_$2(t *testing.T) {", "	$0", "}"]
   },
   "Test table": {
     "description": "Insert template for test cases with map",
@@ -64,9 +51,6 @@
     "description": "Insert template for if err != nil { t.Errorf }",
     "scope": "go",
     "prefix": "terrf",
-    "body": [
-      "if err != nil {", "	t.Errorf(\"$0: %v\", err)",
-      "}"
-    ]
+    "body": ["if err != nil {", "	t.Errorf(\"$0: %v\", err)", "}"]
   }
 }
