@@ -28,10 +28,8 @@ return {
 					"css",
 
 					-- code
-					"rs",
-					"cs",
-					"ex",
-					"exs",
+					"rust",
+					"elixir",
 					"dart",
 
 					-- shell
@@ -40,7 +38,7 @@ return {
 					"awk",
 
 					-- note
-					"md",
+					"markdown",
 
 					-- data/conf
 					"xml",
