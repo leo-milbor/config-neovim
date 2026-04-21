@@ -6,67 +6,33 @@ return {
 		},
 		lazy = false,
 		config = function()
-			local refactor = require("refactoring").refactor
+			local refactoring = (require("refactoring"))
 			local set_key = vim.keymap.set
 			local root_map = "<leader>r"
 
-			set_key("x", root_map .. "ef", function()
-				return refactor("Extract Function")
+			set_key({ "n", "x" }, root_map .. "ef", function()
+				return refactoring.extract_func()
 			end, { desc = "extract function", expr = true })
 
-			set_key("x", root_map .. "Ef", function()
-				return refactor("Extract Function To File")
+			set_key({ "n", "x" }, root_map .. "Ef", function()
+				return refactoring.extract_func_to_file()
 			end, { desc = "extract function to file", expr = true })
 
-			set_key("x", root_map .. "ev", function()
-				return refactor("Extract Variable")
+			set_key({ "n", "x" }, root_map .. "ev", function()
+				return refactoring.extract_var()
 			end, { desc = "extract variable", expr = true })
 
-			set_key("n", root_map .. "if", function()
-				return refactor("Inline Function")
+			set_key({ "n", "x" }, root_map .. "if", function()
+				return refactoring.inline_func()
 			end, { desc = "inline function", expr = true })
 
 			set_key({ "n", "x" }, root_map .. "iv", function()
-				return refactor("Inline Variable")
+				return refactoring.inline_var()
 			end, { desc = "inline variable", expr = true })
 
-			set_key("n", root_map .. "eb", function()
-				return refactor("Extract Block")
-			end, { desc = "extract block", expr = true })
-
-			set_key("n", root_map .. "Eb", function()
-				return refactor("Extract Block To File")
-			end, { desc = "extract block to file", expr = true })
-
-			set_key("n", root_map .. "r", vim.lsp.buf.rename, { desc = "rename", noremap = true })
-
 			set_key({ "n", "v" }, root_map .. "a", function()
-				require("refactoring").select_refactor()
+				refactoring.select_refactor()
 			end, { desc = "show possible refactoring" })
-
-			-- prompting
-			require("refactoring").setup({
-				-- prompt for return type
-				prompt_func_return_type = {
-					go = true,
-					cpp = true,
-					c = true,
-					java = true,
-					h = true,
-					hpp = true,
-					cxx = true,
-				},
-				-- prompt for function parameters
-				prompt_func_param_type = {
-					go = true,
-					cpp = true,
-					c = true,
-					java = true,
-					h = true,
-					hpp = true,
-					cxx = true,
-				},
-			})
 		end,
 	},
 }
