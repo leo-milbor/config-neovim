@@ -9,13 +9,13 @@ return {
 			go = { "goimports", "gofumpt" },
 
 			-- web
-			javascript = { "prettierd" },
-			typescript = { "prettierd" },
-			javascriptreact = { "prettierd" },
-			typescriptreact = { "prettierd" },
-			html = { "prettierd" },
-			css = { "prettierd" },
-			scss = { "prettierd" },
+			javascript = { "oxfmt" },
+			typescript = { "oxfmt" },
+			javascriptreact = { "oxfmt" },
+			typescriptreact = { "oxfmt" },
+			html = { "oxfmt" },
+			css = { "oxfmt" },
+			scss = { "oxfmt" },
 
 			-- code
 			python = { "black" },
@@ -25,12 +25,12 @@ return {
 			sh = { "beautysh" },
 
 			--note
-			markdown = { "prettierd" },
+			markdown = { "oxfmt" },
 
 			-- data/config
-			yaml = { "prettierd" },
+			yaml = { "oxfmt" },
 			toml = { "taplo" },
-			json = { "prettierd" },
+			json = { "oxfmt" },
 		},
 	},
 	config = function(_, opts)
