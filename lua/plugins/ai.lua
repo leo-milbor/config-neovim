@@ -24,11 +24,16 @@ return {
 						return require("codecompanion.adapters").extend("ollama", {
 							schema = {
 								model = {
-									default = "qwen2.5-coder:7b",
+									default = "codestral:22b",
 								},
 								-- Context window.
 								num_ctx = {
 									default = 16384,
+								},
+								extra_body = {
+									temperature = 0.1, -- Limit randomness -> less creativity
+									top_p = 0.9, -- Filter out less likely token
+									repeat_penalty = 1.1, -- Increase penalty for repeated tokens.
 								},
 							},
 						})
