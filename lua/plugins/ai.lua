@@ -1,23 +1,28 @@
 return {
+	{ "github/copilot.vim" },
 	{
 		"olimorris/codecompanion.nvim",
 		version = "^19.0.0",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
+			"franco-ruggeri/codecompanion-spinner.nvim",
 		},
 		config = function()
 			require("codecompanion").setup({
 				strategies = {
 					chat = {
-						adapter = "ollama",
+						adapter = "copilot",
 					},
 					inline = {
-						adapter = "ollama",
+						adapter = "copilot",
 					},
 					agent = {
-						adapter = "ollama",
+						adapter = "copilot",
 					},
+				},
+				extensions = {
+					spinner = {},
 				},
 				adapters = {
 					ollama = function()
