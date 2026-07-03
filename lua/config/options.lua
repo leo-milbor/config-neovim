@@ -2,7 +2,7 @@
 vim.g.have_nerd_font = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -47,14 +47,28 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
 -- Preview substitutions live, as you type, in a temp bottom buffer
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
 -- add a vertical bar at nth column
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 
+-- Set the filetype based on the filename patterns, useful for files like .env, .gitignore, etc.
+vim.filetype.add({
+	pattern = {
+		["%.aliases"] = "sh",
+		["%.env"] = "dotenv",
+		["%.env%..*"] = "dotenv",
+		["%.secrets"] = "sh",
+		["%.profile"] = "sh",
+		["%.bashrc"] = "sh",
+		["%.zshrc"] = "zsh",
+		["%.gitignore"] = "gitignore",
+		["%.dockerignore"] = "dockerignore",
+	},
+})
 -- Sets how neovim will display certain whitespace characters in the editor.
 -- vim.opt.list = true
 -- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
