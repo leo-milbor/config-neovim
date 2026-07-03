@@ -6,7 +6,8 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
-			"franco-ruggeri/codecompanion-spinner.nvim",
+			"lalitmee/codecompanion-spinners.nvim",
+			"cairijun/codecompanion-agentskills.nvim",
 		},
 		config = function()
 			require("codecompanion").setup({
@@ -22,7 +23,24 @@ return {
 					},
 				},
 				extensions = {
-					spinner = {},
+					agentskills = {
+						opts = {
+							paths = {
+								{
+									(
+										os.getenv("$CEREBRUM_MACHINAE")
+										or "/Users/leo/sources/perso/cerebrum-machinae/main/"
+									) .. "/skills",
+								},
+							},
+						},
+					},
+					spinner = {
+						enabled = true,
+						opts = {
+							style = "cursor-relative",
+						},
+					},
 				},
 				adapters = {
 					ollama = function()
