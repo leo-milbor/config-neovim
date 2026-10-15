@@ -1,4 +1,5 @@
 return {
+	{ "folke/twilight.nvim", opts = { context = 30 } },
 	{
 		"folke/zen-mode.nvim",
 		opts = {
