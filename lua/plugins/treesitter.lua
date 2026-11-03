@@ -1,18 +1,20 @@
 return {
 	{
-		"romus204/tree-sitter-manager.nvim",
-		dependencies = {},
-		event = "VeryLazy",
+		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
+		build = ":TSUpdate",
 		config = function()
-			require("tree-sitter-manager").setup({
-				-- Automatically install parsers when opening new filetypes
-				auto_install = true,
+			require("nvim-treesitter.configs").setup()
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = { "<filetype>" },
+				callback = function()
+					vim.treesitter.start()
+					vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+					vim.wo[0][0].foldmethod = "expr"
+				end,
 			})
-			vim.wo.foldmethod = "expr"
-			vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 		end,
 	},
-
 	{
 		"nvim-mini/mini.ai",
 		version = false,
