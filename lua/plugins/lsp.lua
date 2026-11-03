@@ -46,7 +46,7 @@ return {
 					-- web
 					"html", -- html
 					"emmet_ls", -- html/jsx
-					"vtsls", -- typescript/react
+					"tsc", -- typescript/react
 					"tailwindcss", -- css
 
 					-- shell
