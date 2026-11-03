@@ -18,7 +18,9 @@ return {
 			{
 				"<leader>ff",
 				function()
-					require("fzf-lua").files({ fd_opts = "--no-ignore --hidden --exclude .git --exclude openspec" })
+					require("fzf-lua").files({
+						fd_opts = "--no-ignore --hidden --exclude .git --exclude openspec --exclude node_modules",
+					})
 				end,
 				desc = "Files (Root Dir)",
 			},
