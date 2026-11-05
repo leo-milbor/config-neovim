@@ -2,7 +2,11 @@ return {
 	{
 		"ibhagwan/fzf-lua",
 		dependencies = { "nvim-mini/mini.icons" },
-		opts = {},
+		opts = {
+			fzf_opts = {
+				["--no-select-1"] = true,
+			},
+		},
 		keys = {
 			-- help
 			{ "<leader>?", "<CMD>FzfLua keymaps<CR>", desc = "Key Maps" },
