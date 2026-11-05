@@ -13,7 +13,14 @@ return {
 		lazy = false,
 
 		config = function()
-			require("oil").setup()
+			require("oil").setup({
+				-- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
+				skip_confirm_for_simple_edits = false,
+				prompt_save_on_select_new_entry = false,
+				preview_win = {
+					preview_method = "scratch",
+				},
+			})
 			vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 		end,
 	},
