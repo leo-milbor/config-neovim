@@ -14,4 +14,18 @@ return {
 			vim.cmd.colorscheme("catppuccin-macchiato")
 		end,
 	},
+	{
+		"zenbones-theme/zenbones.nvim",
+		lazy = true,
+		init = function()
+			vim.g.zenbones_compat = 1
+		end,
+	},
+	{
+		"dchinmay2/alabaster.nvim",
+		lazy = true,
+		init = function()
+			vim.g.alabaster_dim_comments = true
+		end,
+	},
 }
