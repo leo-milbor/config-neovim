@@ -14,7 +14,7 @@ return {
 			-- improved vim search
 			{ "<leader>/", "<CMD>FzfLua grep_curbuf<CR>", desc = "Grep (Buffer)" },
 			{ "<leader>f/", "<CMD>FzfLua live_grep<CR>", desc = "Live grep" },
-			{ "<leader>:", "<CMD>FzfLua commands<CR>", desc = "Command" },
+			{ "<leader>:", "<CMD>FzfLua commands<CR>", desc = "Commands" },
 			{ '<leader>"', "<CMD>FzfLua registers<CR>", desc = "Registers" },
 			-- find
 			{ "<leader>fa", "<CMD>FzfLua global<CR>", desc = "All" },
