@@ -33,4 +33,27 @@ return {
 			require("mini.cursorword").setup()
 		end,
 	},
+	-- Change casing style of words, e.g. snake_case, camelCase, PascalCase, etc.
+	{
+		"gregorias/coerce.nvim",
+		tag = "v5.1.1",
+		config = function()
+			require("coerce").setup()
+			vim.keymap.set("n", "cr", "<Plug>(coerce-normal)", { desc = "Coerce word" })
+			vim.keymap.set("n", "co", "<Plug>(coerce-normal-no-lsp)", { desc = "Coerce word (no LSP)" })
+			vim.keymap.set("n", "gcr", "<Plug>(coerce-motion)", { desc = "Coerce motion" })
+			vim.keymap.set("x", "gcr", "<Plug>(coerce-visual)", { desc = "Coerce visual" })
+		end,
+		-- Built-in cases
+		-- Case         Key
+		-- camelCase    c
+		-- dot.case     d
+		-- kebab-case   k
+		-- n12e         n
+		-- PascalCase   p
+		-- snake_case   s
+		-- UPPER_CASE   u
+		-- path/case    /
+		-- space case   <space>
+	},
 }
