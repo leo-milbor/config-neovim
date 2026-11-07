@@ -11,21 +11,27 @@ return {
 					treesitter = true,
 				},
 			})
-			vim.cmd.colorscheme("catppuccin-macchiato")
+		--	vim.cmd.colorscheme("catppuccin-macchiato")
 		end,
 	},
 	{
 		"zenbones-theme/zenbones.nvim",
-		lazy = true,
-		init = function()
-			vim.g.zenbones_compat = 1
-		end,
+		-- Optionally install Lush. Allows for more configuration or extending the colorscheme
+		-- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+		-- In Vim, compat mode is turned on as Lush only works in Neovim.
+		dependencies = "rktjmp/lush.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+		    vim.cmd.colorscheme('forestbones')
+		end
 	},
 	{
-		"dchinmay2/alabaster.nvim",
-		lazy = true,
-		init = function()
-			vim.g.alabaster_dim_comments = true
-		end,
+    'mcncl/alabaster.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+     -- vim.cmd.colorscheme('alabaster')
+    end,
 	},
 }
