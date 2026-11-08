@@ -32,7 +32,7 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons", "folke/noice.nvim" },
 		config = function()
 			require("lualine").setup({
-				options = { theme = require("lualine.themes.base16") },
+				options = { theme = "auto" },
 				sections = {
 					lualine_c = {
 						{ "filename", path = 1 }, -- filename: 0, relative path: 1, absolute path: 2
@@ -41,7 +41,6 @@ return {
 						{
 							require("noice").api.status.mode.get,
 							cond = require("noice").api.status.mode.has,
-							color = { fg = "#ff9e64" },
 						},
 					},
 				},
