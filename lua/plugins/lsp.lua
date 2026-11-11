@@ -20,7 +20,7 @@ return {
 						{ "n", "v" },
 						"gri",
 						fzf.lsp_implementations,
-						{ desc = "code action", noremap = true }
+						{ desc = "implementations", noremap = true }
 					)
 					vim.keymap.set({ "n", "v" }, "grc", fzf.lsp_code_actions, { desc = "code action", noremap = true })
 					vim.keymap.set(
